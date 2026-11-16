@@ -20,7 +20,7 @@ sparcbot_driver:
 
     wheel_radius_m: 0.050
     counts_per_rev: 500.0       # encoder counts per gearbox output revolution
-    velocity_cutoff_hz: 8.0     # first-order low-pass on wheel velocity (<= 0 disables)
+    velocity_cutoff_hz: 5.0     # first-order low-pass on wheel velocity (<= 0 disables)
 
     # Wiring. Signs make "positive command" and "positive
     # encoder motion" both mean robot-forward wheel motion.
@@ -62,34 +62,34 @@ wheel_controller:
   ros__parameters:
     # CSV file for WheelController.log() (call it inside compute()); '' disables logging.
     # Use an absolute path, e.g. /home/sparcbot/logs/ff_sweep.csv
-    log_file: ''
+    log_file: '/home/bellman/sparcbot/logs/pid_test.csv'
 
     left:
-      kp: 0.0
-      ki: 0.0
+      kp: 1.0
+      ki: 2.6
       kd: 0.0
       feedforward:
-        forward_static: 0.0
-        forward_velocity_gain: 0.0
-        reverse_static: 0.0
-        reverse_velocity_gain: 0.0
-        forward_breakaway: 0.0
-        reverse_breakaway: 0.0
+        forward_static: 0.22
+        forward_velocity_gain: 0.05
+        reverse_static: 0.24
+        reverse_velocity_gain: 0.05
+        forward_breakaway: 0.05
+        reverse_breakaway: 0.05
         stopped_velocity_threshold: 0.025
         max_command: 1.0
         zero_velocity_threshold: 0.0005
 
     right:
-      kp: 0.0
-      ki: 0.0
+      kp: 1.5
+      ki: 3.75
       kd: 0.0
       feedforward:
-        forward_static: 0.0
-        forward_velocity_gain: 0.0
-        reverse_static: 0.0
-        reverse_velocity_gain: 0.0
-        forward_breakaway: 0.0
-        reverse_breakaway: 0.0
+        forward_static: 0.22
+        forward_velocity_gain: 0.05
+        reverse_static: 0.20
+        reverse_velocity_gain: 0.05
+        forward_breakaway: 0.05
+        reverse_breakaway: 0.05
         stopped_velocity_threshold: 0.025
         max_command: 1.0
         zero_velocity_threshold: 0.0005
