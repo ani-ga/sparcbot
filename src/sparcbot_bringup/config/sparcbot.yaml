@@ -19,6 +19,8 @@ sparcbot_driver:
     cmd_timeout_s: 0.1          # coast if no /wheel_cmd for this long (<= 0 disables)
 
     counts_per_rev: 500.0       # encoder counts per gearbox output revolution
+    left_counts_per_rev: 350.0  # measured by push test (left encoder reads ~30% low)
+    right_counts_per_rev: 500.0 # measured by push test (matches spec)
     velocity_cutoff_hz: 5.0     # first-order low-pass on wheel velocity (<= 0 disables)
 
     # Wiring. Signs make "positive command" and "positive
